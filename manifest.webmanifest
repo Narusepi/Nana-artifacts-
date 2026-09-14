@@ -1,0 +1,26 @@
+{
+  "name": "Mis cuentas",
+  "short_name": "Mis cuentas",
+  "description": "Aplicación personal para registrar y controlar gastos e ingresos.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F3ECDA",
+  "theme_color": "#5B6440",
+  "lang": "es-PE",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

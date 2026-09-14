@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5B6440">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mis cuentas">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFMElEQVR4nO3dPVIbQRBA4cZF+RK+je/BHYgcmjIhke/ge3AQcmdkZE7sYItlrVVLs7sz0z/zvhgXmubRI7kA3by9vghwzifrBwC/iAMq4oCKOKAiDqiIAyrigIo4oCIOqIgDKuKAijigIg6oiAMq4oCKOKAiDqiIAyrigIo4oCIOqIgDKuKAijigIg6oiAMq4oDq1voBdPXz1/fyD76/e2z3SEK4SfyL1JtSKDFaLgnjqN7E2iCV5ImjQxNruSsJH4dJE2spKwkch5MslpIlEjIOh1kspUkkWBzOs1hKkEiYOAJlsRQ6kRj/Qxq0DIn8yMX/5gg93KWIK8T15khThsQ8i984Ik7zsnAn8nithBviVlGuGHebI30ZEueMvuKIMrXjQpzUURwh5lWR//N6icP/pFpwfmoXcTifUVOez24fh+fp9OF2AsZxuJ1LZz7nYBmHz4lYcTgN+2sFbpnF4fAbxZy3mdjE4W0KfriajEEcrs7vkJ/58JwDqt5x+Pm28MzJlLrG4eTMIXiYFdcKVP3i8PCtEIv5xNgcUHWKw/ybICjbubE5oOrxA8ajrY1vX3+Uf/DT88PVj7H6geSx/uxTC5tSKPnnJbn00XxzZF0bB5sosazEZHmwObbp0MT6c1ntEuIo0rOJ85/9918R+fPlpufnbRtHgjvFNosTn/smwuZQucpiqVsixHGG2yyWOiTSMI6Id0qILJaaJsL/kH4IV8ZsSqQ6rhWRyFnMWqyQVpsj0J2SoIxZ3RUy+rWSqYxJxT7GvVbyZTGrdcUMujkSlzE7vkJGjGOEMiYH+xgujnHKmBzpo0kcbl+qjFbGZHcfA22OMcuY7OtjlDhGLmOyo48h4qCMydY+8sdBGUub+sgfB3ZLHgdrY618eWSOgzI0hX2kjYMyLivpI20cOC5nHKyNEleXR8I4KKPc5T4SxoFassXB2tjqwvLIFgcqahKH1d+TYG3soy0PNgdUeeJgbRxxdnnkiQPVJYmDtXHcenkkiQMttIojyjty44IMm4M7pZaTmyVDHGikYRzcLNGF3xzcKXUtb5bwcaCdtnFws4QWe3Nwp7Qw3yyx40BTzePgZomLzQFVjzhYHkGxOaDqFEeL5cFLlXamFyxsDqj6xcEzj3DYHFB1jYPlEUvvzUEfgXCtQGUQB8sjCpvNQR8hmF0r9OEfzzmgsoyD5eGc8eagD8/srxX6cMs+DqEPr1zEIbv6eHp+aPFIIO9vHuglDmF/+OMoDqEPZ3zFIfThibs4ROT+7pFEPPAYx4Q+zPmNQwr64AVLC/P7nLuOQ7hiTHmPY0IfJm7eXl+sH8MGZ9/rml9gqWi+UyTK5phxy/QULI4JifQR7FpZmy4abpYqlneKJIhjsuON2rF2EkfIawV9JInjJHnssJ5hkjjQQp44WB5HnJ1enjhQXao4WB77aHNLFQfqyhYHy2OrCxPLFgcqShgHy6Pc5VkljEPoo8zVKeWMA1WkjYPlcVnJfNLGIfShK5xM5jiEPs4pn0nyOHBE/jhYHkubppE/DqGPd1vnMEQcQh+7JjBKHDJ2H/vOPlAcMmofu089VhwyXh9HzjtcHDJSHwdPOmIcMkYfx894W+VxRDTNLuVvQ9VKf9DNMcu3QiqeaPQ4JFcfdc8y7rWylOCKaZE4m+ND3BXS6JGzOf4TboU0DZo4zgiRSIc9Rxwqt4l0u/6I4wpXiXR+VkQcReavikklVs+UiWObnpWYv3oijp3aVWLexIw4jlp/LTfl4ieFNeKoz/PXe5N/QiSgQpfnOo0AAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAFMElEQVR4nO3dPVIbQRBA4cZF+RK+je/BHYgcmjIhke/ge3AQcmdkZE7sYItlrVVLs7sz0z/zvhgXmubRI7kA3by9vghwzifrBwC/iAMq4oCKOKAiDqiIAyrigIo4oCIOqIgDKuKAijigIg6oiAMq4oCKOKAiDqiIAyrigIo4oCIOqIgDKuKAijigIg6oiAMq4oDq1voBdPXz1/fyD76/e2z3SEK4SfyL1JtSKDFaLgnjqN7E2iCV5ImjQxNruSsJH4dJE2spKwkch5MslpIlEjIOh1kspUkkWBzOs1hKkEiYOAJlsRQ6kRj/Qxq0DIn8yMX/5gg93KWIK8T15khThsQ8i984Ik7zsnAn8nithBviVlGuGHebI30ZEueMvuKIMrXjQpzUURwh5lWR//N6icP/pFpwfmoXcTifUVOez24fh+fp9OF2AsZxuJ1LZz7nYBmHz4lYcTgN+2sFbpnF4fAbxZy3mdjE4W0KfriajEEcrs7vkJ/58JwDqt5x+Pm28MzJlLrG4eTMIXiYFdcKVP3i8PCtEIv5xNgcUHWKw/ybICjbubE5oOrxA8ajrY1vX3+Uf/DT88PVj7H6geSx/uxTC5tSKPnnJbn00XxzZF0bB5sosazEZHmwObbp0MT6c1ntEuIo0rOJ85/9918R+fPlpufnbRtHgjvFNosTn/smwuZQucpiqVsixHGG2yyWOiTSMI6Id0qILJaaJsL/kH4IV8ZsSqQ6rhWRyFnMWqyQVpsj0J2SoIxZ3RUy+rWSqYxJxT7GvVbyZTGrdcUMujkSlzE7vkJGjGOEMiYH+xgujnHKmBzpo0kcbl+qjFbGZHcfA22OMcuY7OtjlDhGLmOyo48h4qCMydY+8sdBGUub+sgfB3ZLHgdrY618eWSOgzI0hX2kjYMyLivpI20cOC5nHKyNEleXR8I4KKPc5T4SxoFassXB2tjqwvLIFgcqahKH1d+TYG3soy0PNgdUeeJgbRxxdnnkiQPVJYmDtXHcenkkiQMttIojyjty44IMm4M7pZaTmyVDHGikYRzcLNGF3xzcKXUtb5bwcaCdtnFws4QWe3Nwp7Qw3yyx40BTzePgZomLzQFVjzhYHkGxOaDqFEeL5cFLlXamFyxsDqj6xcEzj3DYHFB1jYPlEUvvzUEfgXCtQGUQB8sjCpvNQR8hmF0r9OEfzzmgsoyD5eGc8eagD8/srxX6cMs+DqEPr1zEIbv6eHp+aPFIIO9vHuglDmF/+OMoDqEPZ3zFIfThibs4ROT+7pFEPPAYx4Q+zPmNQwr64AVLC/P7nLuOQ7hiTHmPY0IfJm7eXl+sH8MGZ9/rml9gqWi+UyTK5phxy/QULI4JifQR7FpZmy4abpYqlneKJIhjsuON2rF2EkfIawV9JInjJHnssJ5hkjjQQp44WB5HnJ1enjhQXao4WB77aHNLFQfqyhYHy2OrCxPLFgcqShgHy6Pc5VkljEPoo8zVKeWMA1WkjYPlcVnJfNLGIfShK5xM5jiEPs4pn0nyOHBE/jhYHkubppE/DqGPd1vnMEQcQh+7JjBKHDJ2H/vOPlAcMmofu089VhwyXh9HzjtcHDJSHwdPOmIcMkYfx894W+VxRDTNLuVvQ9VKf9DNMcu3QiqeaPQ4JFcfdc8y7rWylOCKaZE4m+ND3BXS6JGzOf4TboU0DZo4zgiRSIc9Rxwqt4l0u/6I4wpXiXR+VkQcReavikklVs+UiWObnpWYv3oijp3aVWLexIw4jlp/LTfl4ieFNeKoz/PXe5N/QiSgQpfnOo0AAAAASUVORK5CYII=">
+<title>Mis cuentas</title>
+<style>
+  :root{
+    --bone:#F3ECDA;
+    --bone-dim:#E6DCC5;
+    --matcha:#838F58;
+    --matcha-hover:#727C4B;
+    --matcha-deep:#5B6440;
+    --matcha-light:#C9E4B8;
+    --strawberry:#F9D1D9;
+    --rose-deep:#96405D;
+    --ink-text:#2A2618;
+    --muted-text:#6B6656;
+    --bone-muted: rgba(243,236,218,.68);
+    --radius:9px;
+    --serif:Georgia,'Iowan Old Style','Palatino Linotype',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--matcha-deep);
+    font-family:var(--sans);
+    color:var(--ink-text);
+    display:flex;
+    justify-content:center;
+  }
+  button{font-family:inherit;}
+  .page{
+    width:100%;
+    max-width:480px;
+    background:var(--bone);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  @media (min-width:520px){
+    body{padding:32px 16px;}
+    .page{min-height:auto;border-radius:16px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);margin-bottom:32px;}
+  }
+
+  /* Header / tally */
+  .ledger-head{background:var(--matcha-deep);color:var(--bone);padding:20px 20px 24px;}
+  .head-top{display:flex;align-items:center;justify-content:space-between;}
+  .ledger-head h1{font-family:var(--serif);font-weight:400;font-size:22px;margin:0;letter-spacing:.2px;}
+  .icon-btn{background:none;border:1px solid rgba(243,236,218,.3);color:var(--bone);width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:16px;line-height:1;}
+  .icon-btn:hover{border-color:var(--strawberry);}
+
+  .tools-panel{display:flex;flex-direction:column;gap:8px;margin-top:14px;padding:14px;background:rgba(255,255,255,.06);border-radius:10px;}
+  .tools-panel[hidden]{display:none;}
+  .tools-status{font-size:12px;color:var(--bone-muted);margin-bottom:2px;}
+  .tools-panel button,.tools-panel .file-label{background:transparent;border:1px solid rgba(243,236,218,.25);color:var(--bone);padding:9px 12px;border-radius:8px;font-size:14px;text-align:left;cursor:pointer;display:block;}
+  .tools-panel .danger{border-color:rgba(150,64,93,.6);color:#F0AFC0;}
+
+  .month-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px;font-size:14px;color:var(--bone-muted);}
+  .month-nav button{background:none;border:none;color:var(--strawberry);font-size:19px;cursor:pointer;padding:4px 10px;}
+  .month-nav span{min-width:150px;text-align:center;}
+
+  .tally{margin-top:18px;text-align:center;}
+  .tally-amount{font-family:var(--serif);font-size:40px;color:var(--strawberry);line-height:1.1;}
+  .tally-label{font-size:12px;color:var(--bone-muted);margin-top:2px;}
+  .tally-sub{font-size:12.5px;color:var(--bone-muted);margin-top:10px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .tally-sub b{color:var(--bone);font-weight:600;}
+  .delta-up{color:var(--strawberry);}
+  .delta-down{color:var(--matcha-light);}
+
+  /* Cards / sections */
+  .card{padding:20px;border-bottom:1px solid var(--bone-dim);}
+  .card h2{font-family:var(--serif);font-weight:400;font-size:17px;margin:0 0 14px;}
+  .muted{color:var(--muted-text);font-weight:400;font-size:13px;}
+
+  .type-toggle{display:flex;gap:8px;margin-bottom:14px;}
+  .type-btn{flex:1;padding:9px;border-radius:8px;border:1px solid var(--bone-dim);background:transparent;font-size:14px;color:var(--muted-text);cursor:pointer;}
+  .type-btn[data-type="gasto"].active{background:var(--rose-deep);border-color:var(--rose-deep);color:var(--bone);}
+  .type-btn[data-type="ingreso"].active{background:var(--matcha-deep);border-color:var(--matcha-deep);color:var(--bone);}
+
+  .field-row{margin-bottom:12px;}
+  .field-row.two-col{display:flex;gap:10px;}
+  .field-row.two-col label{flex:1;min-width:0;}
+  label{display:block;font-size:12px;color:var(--muted-text);margin-bottom:5px;}
+  input,select{
+    width:100%;padding:10px 11px;border:1px solid var(--bone-dim);border-radius:8px;
+    font-size:16px;background:#fff;color:var(--ink-text);font-family:var(--sans);
+  }
+  select{
+    appearance:none;-webkit-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B6656'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 12px center;padding-right:30px;
+  }
+  input:focus,select:focus,button:focus-visible{outline:2px solid var(--matcha);outline-offset:1px;border-color:var(--matcha);}
+
+  .form-actions{display:flex;gap:10px;margin-top:6px;}
+  .primary-btn{flex:1;background:var(--matcha);border:none;color:var(--ink-text);font-weight:600;padding:12px;border-radius:9px;font-size:15px;cursor:pointer;}
+  .primary-btn:hover{background:var(--matcha-hover);}
+  .ghost-btn{background:none;border:1px solid var(--bone-dim);padding:12px 16px;border-radius:9px;color:var(--muted-text);cursor:pointer;}
+
+  .tabs{display:flex;gap:18px;border-bottom:1px solid var(--bone-dim);margin-bottom:14px;}
+  .tab{background:none;border:none;padding:0 0 10px;font-size:14px;color:var(--muted-text);cursor:pointer;border-bottom:2px solid transparent;}
+  .tab.active{color:var(--ink-text);border-bottom-color:var(--matcha);font-weight:600;}
+
+  .summary-bars{display:flex;flex-direction:column;gap:12px;}
+  .bar-top{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:5px;}
+  .bar-track{height:6px;background:var(--bone-dim);border-radius:3px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:3px;background:var(--matcha);}
+  .summary-empty{font-size:13.5px;color:var(--muted-text);margin:0;}
+
+  .date-group{margin-bottom:18px;}
+  .date-group:last-child{margin-bottom:0;}
+  .date-heading{display:flex;justify-content:space-between;font-size:12px;color:var(--muted-text);margin-bottom:8px;border-bottom:1px solid var(--bone-dim);padding-bottom:5px;}
+  .entry-row{display:flex;align-items:center;gap:10px;padding:9px 4px;cursor:pointer;border-radius:8px;}
+  .entry-row:hover{background:rgba(0,0,0,.04);}
+  .entry-icon{width:32px;height:32px;border-radius:50%;background:var(--bone-dim);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+  .entry-main{flex:1;min-width:0;}
+  .entry-title{font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .entry-sub{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted-text);margin-top:2px;}
+  .pay-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+  .entry-amount{font-family:var(--serif);font-size:15.5px;white-space:nowrap;}
+  .entry-amount.gasto{color:var(--rose-deep);}
+  .entry-amount.ingreso{color:var(--matcha-deep);}
+  .entry-del{background:none;border:none;color:var(--muted-text);padding:4px 2px;cursor:pointer;flex-shrink:0;font-size:15px;}
+  .entry-del:hover{color:var(--rose-deep);}
+  .empty-state{font-size:14px;color:var(--muted-text);text-align:center;padding:22px 10px;margin:0;}
+
+  .foot-note{padding:16px 20px 26px;font-size:11.5px;color:var(--muted-text);text-align:center;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="ledger-head">
+    <div class="head-top">
+      <h1>Mis cuentas</h1>
+      <button type="button" id="toolsToggle" class="icon-btn" aria-label="Herramientas" title="Herramientas">&#9881;</button>
+    </div>
+    <div class="tools-panel" id="toolsPanel" hidden>
+      <div id="backupStatus" class="tools-status"></div>
+      <button type="button" id="exportBtn">Exportar copia (.json)</button>
+      <label class="file-label">Importar copia
+        <input type="file" id="importInput" accept="application/json" hidden>
+      </label>
+      <button type="button" id="resetBtn" class="danger">Borrar todo</button>
+    </div>
+    <div class="month-nav">
+      <button type="button" id="prevMonth" aria-label="Mes anterior">&lsaquo;</button>
+      <span id="monthLabel"></span>
+      <button type="button" id="nextMonth" aria-label="Mes siguiente">&rsaquo;</button>
+    </div>
+    <div class="tally">
+      <div class="tally-amount" id="totalGasto" aria-live="polite">S/ 0.00</div>
+      <div class="tally-label">gastado este mes</div>
+      <div class="tally-sub" id="tallySub"></div>
+    </div>
+  </header>
+
+  <section class="card form-card">
+    <h2 id="formTitle">Nuevo movimiento</h2>
+    <form id="entryForm">
+      <div class="type-toggle" role="group" aria-label="Tipo de movimiento">
+        <button type="button" class="type-btn active" data-type="gasto">Gasto</button>
+        <button type="button" class="type-btn" data-type="ingreso">Ingreso</button>
+      </div>
+      <div class="field-row">
+        <label for="amount">Monto (S/)
+          <input type="number" id="amount" inputmode="decimal" step="0.01" min="0.01" placeholder="0.00" required>
+        </label>
+      </div>
+      <div class="field-row two-col">
+        <label for="category">Categoría
+          <select id="category" required></select>
+        </label>
+        <label for="payment">Medio de pago
+          <select id="payment" required></select>
+        </label>
+      </div>
+      <div class="field-row two-col">
+        <label for="date">Fecha
+          <input type="date" id="date" required>
+        </label>
+        <label for="note">Nota
+          <input type="text" id="note" placeholder="Opcional" maxlength="60">
+        </label>
+      </div>
+      <div class="form-actions">
+        <button type="button" id="cancelEdit" class="ghost-btn" hidden>Cancelar</button>
+        <button type="submit" id="submitBtn" class="primary-btn">Guardar gasto</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card summary-card">
+    <div class="tabs">
+      <button type="button" class="tab active" data-tab="category">Por categoría</button>
+      <button type="button" class="tab" data-tab="payment">Por medio de pago</button>
+    </div>
+    <div id="summaryBars" class="summary-bars"></div>
+  </section>
+
+  <section class="card list-card">
+    <h2>Movimientos <span id="entryCount" class="muted"></span></h2>
+    <div id="entryList"></div>
+  </section>
+
+  <footer class="foot-note">
+    Tus datos se guardan solo en este dispositivo y navegador.<br>
+    Para usarla como una app: ábrela en Safari y usa Compartir &rarr; Agregar a pantalla de inicio.<br>
+    Exporta una copia de vez en cuando para respaldar tu información.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var STORAGE_KEY = 'gm_gastos_mafer_v1';
+
+  var EXPENSE_CATEGORIES = [
+    {key:'alimentacion', label:'Alimentación', icon:'🍽'},
+    {key:'transporte', label:'Transporte', icon:'🚕'},
+    {key:'vivienda', label:'Vivienda y servicios', icon:'🏠'},
+    {key:'salud', label:'Salud', icon:'⚕'},
+    {key:'educacion', label:'Educación', icon:'📚'},
+    {key:'entretenimiento', label:'Entretenimiento', icon:'🎬'},
+    {key:'ropa', label:'Ropa', icon:'👕'},
+    {key:'otros', label:'Otros', icon:'•'}
+  ];
+  var INCOME_CATEGORIES = [
+    {key:'sueldo', label:'Sueldo', icon:'💼'},
+    {key:'negocio', label:'Freelance / negocio', icon:'🧾'},
+    {key:'otros_ingreso', label:'Otro ingreso', icon:'•'}
+  ];
+  var PAYMENT_METHODS = [
+    {key:'efectivo', label:'Efectivo', color:'#5B6440'},
+    {key:'yape', label:'Yape', color:'#6B4A82'},
+    {key:'plin', label:'Plin', color:'#2F6F76'},
+    {key:'debito', label:'Tarjeta débito', color:'#3A5A8C'},
+    {key:'credito_sip', label:'Tarjeta de crédito Sip', color:'#12A9E0'},
+    {key:'credito_bbva', label:'Tarjeta de crédito BBVA', color:'#0B3B7A'},
+    {key:'otro', label:'Otro', color:'#8A8577'}
+  ];
+  var MONTH_NAMES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var DAY_NAMES = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+
+  var state = {entries: [], lastExport: null};
+  var currentType = 'gasto';
+  var editingId = null;
+  var activeTab = 'category';
+  var today = new Date();
+  var viewYear = today.getFullYear();
+  var viewMonth = today.getMonth();
+  var displayedTotal = 0;
+
+  function loadState(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(raw){
+        var parsed = JSON.parse(raw);
+        if(parsed && Array.isArray(parsed.entries)) return {entries:parsed.entries, lastExport:parsed.lastExport||null};
+      }
+    }catch(e){ console.warn('No se pudo leer el almacenamiento local', e); }
+    return {entries: [], lastExport: null};
+  }
+  function saveState(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch(e){ console.warn('No se pudo guardar', e); }
+  }
+  function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,8); }
+
+  function formatCurrency(n){
+    var sign = n < 0 ? '-' : '';
+    return sign + 'S/ ' + Math.abs(n).toLocaleString('es-PE', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+  function todayStr(){
+    var d = new Date();
+    var y = d.getFullYear(), m = String(d.getMonth()+1).padStart(2,'0'), day = String(d.getDate()).padStart(2,'0');
+    return y + '-' + m + '-' + day;
+  }
+  function parseLocalDate(str){
+    var parts = str.split('-').map(Number);
+    return new Date(parts[0], parts[1]-1, parts[2]);
+  }
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, function(s){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s];
+    });
+  }
+  function monthLabel(){
+    var name = MONTH_NAMES[viewMonth];
+    return name.charAt(0).toUpperCase() + name.slice(1) + ' ' + viewYear;
+  }
+  function categoryList(type){ return type === 'ingreso' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES; }
+  function findCategory(type, key){
+    var list = categoryList(type);
+    for(var i=0;i<list.length;i++){ if(list[i].key===key) return list[i]; }
+    return {label:key, icon:'•'};
+  }
+  function findPayment(key){
+    for(var i=0;i<PAYMENT_METHODS.length;i++){ if(PAYMENT_METHODS[i].key===key) return PAYMENT_METHODS[i]; }
+    return {label:key, color:'#8A8577'};
+  }
+
+  function entriesForMonth(y,m){
+    return state.entries.filter(function(e){
+      var d = parseLocalDate(e.date);
+      return d.getFullYear()===y && d.getMonth()===m;
+    });
+  }
+  function computeTotals(entries){
+    var gasto=0, ingreso=0, byCategory={}, byPayment={};
+    entries.forEach(function(e){
+      var amt = Number(e.amount) || 0;
+      if(e.type==='ingreso'){ ingreso += amt; }
+      else{
+        gasto += amt;
+        byCategory[e.category] = (byCategory[e.category]||0) + amt;
+        byPayment[e.payment] = (byPayment[e.payment]||0) + amt;
+      }
+    });
+    return {gasto:gasto, ingreso:ingreso, byCategory:byCategory, byPayment:byPayment};
+  }
+
+  function populateSelects(){
+    var catSel = document.getElementById('category');
+    catSel.innerHTML = categoryList(currentType).map(function(c){
+      return '<option value="'+c.key+'">'+c.icon+' '+c.label+'</option>';
+    }).join('');
+    var paySel = document.getElementById('payment');
+    if(!paySel.dataset.filled){
+      paySel.innerHTML = PAYMENT_METHODS.map(function(p){
+        return '<option value="'+p.key+'">'+p.label+'</option>';
+      }).join('');
+      paySel.dataset.filled = '1';
+    }
+  }
+
+  function setType(type){
+    currentType = type;
+    document.querySelectorAll('.type-btn').forEach(function(b){
+      b.classList.toggle('active', b.dataset.type===type);
+    });
+    populateSelects();
+    document.getElementById('submitBtn').textContent = editingId ? 'Guardar cambios' : (type==='ingreso' ? 'Guardar ingreso' : 'Guardar gasto');
+  }
+
+  function animateTotal(newTotal){
+    var el = document.getElementById('totalGasto');
+    var start = displayedTotal;
+    var diff = newTotal - start;
+    var duration = 400;
+    var startTime = null;
+    function step(ts){
+      if(startTime===null) startTime = ts;
+      var p = Math.min(1, (ts-startTime)/duration);
+      var eased = 1 - Math.pow(1-p, 3);
+      el.textContent = formatCurrency(start + diff*eased);
+      if(p<1) requestAnimationFrame(step);
+      else displayedTotal = newTotal;
+    }
+    requestAnimationFrame(step);
+  }
+
+  function renderTally(){
+    var entries = entriesForMonth(viewYear, viewMonth);
+    var totals = computeTotals(entries);
+    animateTotal(totals.gasto);
+    var balance = totals.ingreso - totals.gasto;
+
+    var prevMonth = viewMonth-1, prevYear = viewYear;
+    if(prevMonth<0){ prevMonth=11; prevYear--; }
+    var prevTotals = computeTotals(entriesForMonth(prevYear, prevMonth));
+
+    var deltaHtml = '';
+    if(prevTotals.gasto>0){
+      var pct = ((totals.gasto-prevTotals.gasto)/prevTotals.gasto)*100;
+      var cls = pct>=0 ? 'delta-up' : 'delta-down';
+      var arrow = pct>=0 ? '+' : '';
+      deltaHtml = '<span class="'+cls+'">'+arrow+pct.toFixed(0)+'% vs '+MONTH_NAMES[prevMonth]+'</span>';
+    }
+    document.getElementById('tallySub').innerHTML =
+      '<span>Ingreso: <b>'+formatCurrency(totals.ingreso)+'</b></span>'+
+      '<span>Balance: <b>'+formatCurrency(balance)+'</b></span>'+
+      (deltaHtml ? '<span>'+deltaHtml+'</span>' : '');
+  }
+
+  function renderSummary(){
+    var entries = entriesForMonth(viewYear, viewMonth);
+    var totals = computeTotals(entries);
+    var source = activeTab==='category' ? totals.byCategory : totals.byPayment;
+    var keys = Object.keys(source);
+    var container = document.getElementById('summaryBars');
+    if(keys.length===0){
+      container.innerHTML = '<p class="summary-empty">Aún no hay gastos este mes para resumir.</p>';
+      return;
+    }
+    var max = Math.max.apply(null, keys.map(function(k){ return source[k]; }));
+    keys.sort(function(a,b){ return source[b]-source[a]; });
+    container.innerHTML = keys.map(function(k){
+      var label = activeTab==='category' ? (findCategory('gasto', k).icon+' '+findCategory('gasto', k).label) : findPayment(k).label;
+      var pct = max ? (source[k]/max*100) : 0;
+      return '<div class="bar-row">'+
+        '<div class="bar-top"><span>'+label+'</span><span>'+formatCurrency(source[k])+'</span></div>'+
+        '<div class="bar-track"><div class="bar-fill" style="width:'+pct+'%"></div></div>'+
+        '</div>';
+    }).join('');
+  }
+
+  function renderList(){
+    var entries = entriesForMonth(viewYear, viewMonth).slice().sort(function(a,b){
+      if(a.date!==b.date) return b.date.localeCompare(a.date);
+      return b.id.localeCompare(a.id);
+    });
+    document.getElementById('entryCount').textContent = entries.length ? '('+entries.length+')' : '';
+    var listEl = document.getElementById('entryList');
+    if(entries.length===0){
+      listEl.innerHTML = '<p class="empty-state">Aún no registras movimientos en '+monthLabel().toLowerCase()+'. Agrega el primero arriba.</p>';
+      return;
+    }
+    var groups = {};
+    entries.forEach(function(e){ (groups[e.date] = groups[e.date] || []).push(e); });
+    var dateKeys = Object.keys(groups).sort(function(a,b){ return b.localeCompare(a); });
+
+    listEl.innerHTML = dateKeys.map(function(dateKey){
+      var d = parseLocalDate(dateKey);
+      var heading = DAY_NAMES[d.getDay()] + ' ' + d.getDate() + ' de ' + MONTH_NAMES[d.getMonth()];
+      var dayEntries = groups[dateKey];
+      var daySubtotal = dayEntries.reduce(function(s,e){ return s + (e.type==='ingreso' ? 0 : Number(e.amount)); }, 0);
+
+      var rows = dayEntries.map(function(e){
+        var cat = findCategory(e.type, e.category);
+        var pay = findPayment(e.payment);
+        var amtClass = e.type==='ingreso' ? 'ingreso' : 'gasto';
+        var sign = e.type==='ingreso' ? '+' : '-';
+        var titleText = cat.label + (e.note ? ' · ' + e.note : '');
+        return '<div class="entry-row" data-id="'+e.id+'">'+
+          '<div class="entry-icon">'+cat.icon+'</div>'+
+          '<div class="entry-main">'+
+            '<div class="entry-title">'+escapeHtml(titleText)+'</div>'+
+            '<div class="entry-sub"><span class="pay-dot" style="background:'+pay.color+'"></span>'+pay.label+'</div>'+
+          '</div>'+
+          '<div class="entry-amount '+amtClass+'">'+sign+' '+formatCurrency(Math.abs(e.amount))+'</div>'+
+          '<button type="button" class="entry-del" data-del="'+e.id+'" aria-label="Eliminar" title="Eliminar">&times;</button>'+
+        '</div>';
+      }).join('');
+
+      return '<div class="date-group">'+
+        '<div class="date-heading"><span>'+heading+'</span><span>'+formatCurrency(daySubtotal)+'</span></div>'+
+        rows+
+      '</div>';
+    }).join('');
+  }
+
+  function renderMonthNav(){ document.getElementById('monthLabel').textContent = monthLabel(); }
+
+  function daysSince(iso){
+    var then = new Date(iso);
+    var diffMs = new Date() - then;
+    return Math.floor(diffMs / (1000*60*60*24));
+  }
+  function updateBackupStatus(){
+    var el = document.getElementById('backupStatus');
+    if(!state.lastExport){
+      el.textContent = 'Aún no has exportado una copia de respaldo.';
+      return;
+    }
+    var d = daysSince(state.lastExport);
+    if(d<=0) el.textContent = 'Último respaldo: hoy.';
+    else if(d===1) el.textContent = 'Último respaldo: hace 1 día.';
+    else el.textContent = 'Último respaldo: hace ' + d + ' días.';
+  }
+
+  function renderAll(){
+    renderMonthNav();
+    renderTally();
+    renderSummary();
+    renderList();
+    updateBackupStatus();
+  }
+
+  function resetForm(){
+    document.getElementById('entryForm').reset();
+    document.getElementById('date').value = todayStr();
+    document.getElementById('formTitle').textContent = 'Nuevo movimiento';
+    document.getElementById('cancelEdit').hidden = true;
+    editingId = null;
+    setType('gasto');
+  }
+
+  function startEdit(entry){
+    editingId = entry.id;
+    setType(entry.type);
+    document.getElementById('amount').value = entry.amount;
+    document.getElementById('category').value = entry.category;
+    document.getElementById('payment').value = entry.payment;
+    document.getElementById('date').value = entry.date;
+    document.getElementById('note').value = entry.note || '';
+    document.getElementById('formTitle').textContent = 'Editar movimiento';
+    document.getElementById('cancelEdit').hidden = false;
+    document.getElementById('entryForm').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // --- Events ---
+  document.getElementById('entryForm').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var amount = parseFloat(document.getElementById('amount').value);
+    var category = document.getElementById('category').value;
+    var payment = document.getElementById('payment').value;
+    var date = document.getElementById('date').value;
+    var note = document.getElementById('note').value.trim();
+    if(!amount || amount<=0 || !category || !payment || !date) return;
+
+    if(editingId){
+      var idx = state.entries.findIndex(function(e){ return e.id===editingId; });
+      if(idx>-1){
+        state.entries[idx] = Object.assign({}, state.entries[idx], {type:currentType, amount:amount, category:category, payment:payment, date:date, note:note});
+      }
+    } else {
+      state.entries.push({id:uid(), type:currentType, amount:amount, category:category, payment:payment, date:date, note:note});
+    }
+    saveState();
+    resetForm();
+    renderAll();
+  });
+
+  document.getElementById('cancelEdit').addEventListener('click', resetForm);
+
+  document.querySelectorAll('.type-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ setType(btn.dataset.type); });
+  });
+
+  document.getElementById('prevMonth').addEventListener('click', function(){
+    viewMonth--; if(viewMonth<0){ viewMonth=11; viewYear--; }
+    renderAll();
+  });
+  document.getElementById('nextMonth').addEventListener('click', function(){
+    viewMonth++; if(viewMonth>11){ viewMonth=0; viewYear++; }
+    renderAll();
+  });
+
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      activeTab = tab.dataset.tab;
+      document.querySelectorAll('.tab').forEach(function(t){ t.classList.toggle('active', t===tab); });
+      renderSummary();
+    });
+  });
+
+  document.getElementById('entryList').addEventListener('click', function(ev){
+    var delBtn = ev.target.closest('[data-del]');
+    if(delBtn){
+      var id = delBtn.getAttribute('data-del');
+      if(confirm('¿Eliminar este movimiento?')){
+        state.entries = state.entries.filter(function(e){ return e.id!==id; });
+        saveState();
+        renderAll();
+      }
+      return;
+    }
+    var row = ev.target.closest('.entry-row');
+    if(row){
+      var entry = state.entries.find(function(e){ return e.id===row.getAttribute('data-id'); });
+      if(entry) startEdit(entry);
+    }
+  });
+
+  document.getElementById('toolsToggle').addEventListener('click', function(){
+    var panel = document.getElementById('toolsPanel');
+    panel.hidden = !panel.hidden;
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', function(){
+    var dataStr = JSON.stringify(state, null, 2);
+    var blob = new Blob([dataStr], {type:'application/json'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'gastos-mafer-' + todayStr() + '.json';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    state.lastExport = new Date().toISOString();
+    saveState();
+    updateBackupStatus();
+  });
+
+  document.getElementById('importInput').addEventListener('change', function(ev){
+    var file = ev.target.files[0];
+    if(!file) return;
+    var reader = new FileReader();
+    reader.onload = function(){
+      try{
+        var parsed = JSON.parse(reader.result);
+        if(!parsed || !Array.isArray(parsed.entries)) throw new Error('Formato inválido');
+        var merge = confirm('¿Combinar con tus datos actuales? Aceptar = combinar, Cancelar = reemplazar todo.');
+        if(merge){
+          var existingIds = {};
+          state.entries.forEach(function(e){ existingIds[e.id]=true; });
+          parsed.entries.forEach(function(e){ if(!existingIds[e.id]) state.entries.push(e); });
+        } else {
+          state.entries = parsed.entries;
+        }
+        saveState();
+        renderAll();
+        alert('Datos importados correctamente.');
+      }catch(err){
+        alert('No se pudo leer el archivo. Asegúrate de que sea una copia exportada desde esta app.');
+      }
+      ev.target.value = '';
+    };
+    reader.readAsText(file);
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    if(confirm('Esto borrará todos tus movimientos guardados en este dispositivo. ¿Continuar?')){
+      state = {entries: [], lastExport: state.lastExport};
+      saveState();
+      renderAll();
+    }
+  });
+
+  // --- Init ---
+  function init(){
+    state = loadState();
+    document.getElementById('date').value = todayStr();
+    setType('gasto');
+    renderAll();
+  }
+  init();
+})();
+</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js').catch(function (err) {
+      console.warn('No se pudo registrar el modo offline', err);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
